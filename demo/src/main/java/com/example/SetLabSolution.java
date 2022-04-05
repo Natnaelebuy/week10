@@ -3,11 +3,7 @@ package com.setexample;
 import java.util.*;
 import java.util.Random;
 
-public class SetLabExample {
-
-  private static int[] arr;
-  private static int[] numRay;
-  private static Integer[] ar;
+public class SetLabSolution {
 
   public static void main(final String[] args) {
     // create list of random numbers
@@ -20,30 +16,37 @@ public class SetLabExample {
       Integer val = nums[i];
       System.out.printf("[%d] %d\n", i + 1, val);
     }
+
     //
     // create a set to determine how many duplicates are in the array
     //
-    HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
-        for (int i = 0; i < ar.length; i++) {
-            hm.put(ar[i], i);
-        }
-        // Using hm.keySet() to print output
-        // reduces time complexity. - Lokesh
-        System.out.println("set of integers is");
-        System.out.println(hm.keySet());
-    
 
     // students should write code to
     // create a set of integers
+    HashSet<Integer> numsSet = new HashSet<Integer>();
 
     // students should write code to
     // add integers to the set
+    for (int i = 0; i < nums.length; i++) {
+      Integer val = nums[i];
+      numsSet.add(val);
+    }
 
     // students should write code to
     // print the set
+    System.out.println("Set of integers is:");
+    for (Integer elem : numsSet) {
+      System.out.println(elem);
+    }
 
     // students should write code to
     // print the # of unique elements
+    Integer unique = numsSet.size();
+    System.out.printf(
+      "There are %d unique integers in the array of %d random numbers.",
+      unique,
+      nums.length
+    );
   }
 
   // create list of random numbers
@@ -57,7 +60,5 @@ public class SetLabExample {
       nums[i] = val;
     }
     return nums;
-
   }
-  
 }
