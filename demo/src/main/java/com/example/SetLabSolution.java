@@ -1,4 +1,4 @@
-package com.setexample;
+package com.example;
 
 import java.util.*;
 import java.util.Random;
@@ -17,23 +17,16 @@ public class SetLabSolution {
       System.out.printf("[%d] %d\n", i + 1, val);
     }
 
-    //
-    // create a set to determine how many duplicates are in the array
-    //
-
-    // students should write code to
-    // create a set of integers
+    
     HashSet<Integer> numsSet = new HashSet<Integer>();
 
-    // students should write code to
-    // add integers to the set
+   
     for (int i = 0; i < nums.length; i++) {
       Integer val = nums[i];
       numsSet.add(val);
     }
 
-    // students should write code to
-    // print the set
+    
     System.out.println("Set of integers is:");
     for (Integer elem : numsSet) {
       System.out.println(elem);
