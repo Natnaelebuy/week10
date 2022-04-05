@@ -5,6 +5,8 @@ import java.util.Random;
 
 public class SetLabExample {
 
+  private static int[] arr;
+
   public static void main(final String[] args) {
     // create list of random numbers
     final Integer n = 15;
@@ -19,6 +21,34 @@ public class SetLabExample {
     //
     // create a set to determine how many duplicates are in the array
     //
+    
+    {
+        int countArr[] = new int[n + 1], i;
+ 
+        // Initialize all the elements of the
+        // countArr to 0
+        for (i = 0; i <= n; i++)
+            countArr[i] = 0;
+ 
+        // Count the occurences of each
+        // element of the array
+        for (i = 0; i <= n; i++)
+            countArr[arr[i]]++;
+ 
+        boolean a = false;
+ 
+        // Find the element with more
+        // than one count
+        for (i = 1; i <= n; i++) {
+ 
+            if (countArr[i] > 1) {
+                a = true;
+                System.out.print(i + " ");
+            }
+        }
+        if (!a)
+            System.out.println("-1");
+    }
 
     
 
