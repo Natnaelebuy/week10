@@ -6,6 +6,8 @@ import java.util.Random;
 public class SetLabExample {
 
   private static int[] arr;
+  private static int[] numRay;
+  private static Integer[] ar;
 
   public static void main(final String[] args) {
     // create list of random numbers
@@ -21,35 +23,14 @@ public class SetLabExample {
     //
     // create a set to determine how many duplicates are in the array
     //
-    
-    {
-        int countArr[] = new int[n + 1], i;
- 
-        // Initialize all the elements of the
-        // countArr to 0
-        for (i = 0; i <= n; i++)
-            countArr[i] = 0;
- 
-        // Count the occurences of each
-        // element of the array
-        for (i = 0; i <= n; i++)
-            countArr[arr[i]]++;
- 
-        boolean a = false;
- 
-        // Find the element with more
-        // than one count
-        for (i = 1; i <= n; i++) {
- 
-            if (countArr[i] > 1) {
-                a = true;
-                System.out.print(i + " ");
-            }
+    HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
+        for (int i = 0; i < ar.length; i++) {
+            hm.put(ar[i], i);
         }
-        if (!a)
-            System.out.println("-1");
-    }
-
+        // Using hm.keySet() to print output
+        // reduces time complexity. - Lokesh
+        System.out.println("set of integers is");
+        System.out.println(hm.keySet());
     
 
     // students should write code to
@@ -76,5 +57,7 @@ public class SetLabExample {
       nums[i] = val;
     }
     return nums;
+
   }
+  
 }
